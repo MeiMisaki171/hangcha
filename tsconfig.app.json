@@ -21,7 +21,11 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".", // Set the base directory (usually the root of the project)
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": ["src"]
 }
