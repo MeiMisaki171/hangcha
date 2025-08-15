@@ -10,6 +10,7 @@
 }
 
 #root {
+  font-family: bnp-sreg, Arial, PingFangSC-Regular, 'Microsoft Yahei', sans-serif !important;
 }
 
 .logo {
@@ -38,6 +39,21 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+.input-box {
+  @apply w-[calc(100%-40px)] h-full box-border text-[17px] text-[#666] border-none px-[13px] bg-white truncate;
+}
+
+.arrow-btn {
+  @apply w-[40px] flex h-full items-center justify-center cursor-pointer bg-[#2222ac];
+}
+
+.bnp-smiddle {
+  font-family: bnp-smiddle, Arial, sans-serif;
+}
+.sum {
+  @apply mb-[34px] text-[13px] leading-[19px] text-[#999];
 }
 
 .card {

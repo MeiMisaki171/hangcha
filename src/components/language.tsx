@@ -23,20 +23,20 @@ export default function Language() {
   }
 
   return (
-    <div className='relative flex align-middle text-left' ref={dropdownRef}>
+    <div className='relative flex items-center text-left ' ref={dropdownRef}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className='flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700'
+        className='flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer'
       >
         <GrLanguage className='h-5 w-5' />
         <span className='capitalize'>{language}</span>
       </button>
 
       {open && (
-        <div className='absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded shadow-lg ring-1 ring-black/5 z-50'>
+        <div className='absolute top-[80px] left-[5px] mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow-lg ring-1 ring-black/5 z-50'>
           <button
             onClick={() => handleSelect('en')}
-            className={`block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 ${
+            className={`block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer ${
               language === 'en' ? 'font-bold' : ''
             }`}
           >
@@ -44,7 +44,7 @@ export default function Language() {
           </button>
           <button
             onClick={() => handleSelect('vi')}
-            className={`block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 ${
+            className={`block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer ${
               language === 'vi' ? 'font-bold' : ''
             }`}
           >

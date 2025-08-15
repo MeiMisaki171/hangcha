@@ -1,47 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import { LuSearch } from 'react-icons/lu'
+import { menuItems } from '~/data/menuItems'
 export default function Navbar() {
   const [openIndex, setOpenIndex] = useState<number | null>(null) // dropdown hiện tại đang mở khi hover
   const [activeIndex, setActiveIndex] = useState<number>(0) // menu item đầu tiên active
   const [activeChildIndex, setActiveChildIndex] = useState<number>(0) // item con đầu tiên active
   const [isHoveringNav, setIsHoveringNav] = useState(false)
   const dropdownRefs = useRef<Array<HTMLUListElement | null>>([])
-
-  const menuItems = [
-    {
-      title: 'Solutions',
-      children: [
-        'Industries',
-        'Retail/ Wholesale',
-        'Food/ Pharma',
-        'Transport/ Logistics',
-        'Manufacturing',
-        'Automotive',
-        'Ports/ Terminals',
-        'Chemical/ Energy',
-        'Forestry/ Wood',
-        'Others'
-      ]
-    },
-    {
-      title: 'Products',
-      children: [
-        'Industries',
-        'Retail/ Wholesale',
-        'Food/ Pharma',
-        'Transport/ Logistics',
-        'Manufacturing',
-        'Automotive'
-      ]
-    },
-    { title: 'Parts & Service', children: ['Spare Parts', 'Service'] },
-    { title: 'News & Events', children: ['News', 'Events', 'Media Center'] },
-    {
-      title: 'Why Hangcha',
-      children: ['Company', 'Culture', 'Milestones', 'Case Studies', 'Group Strength', 'Certificate', 'Careers']
-    },
-    { title: 'Contact Us', children: [] }
-  ]
 
   // đo chiều cao dropdown để animation khi hover
   const [dropdownHeights, setDropdownHeights] = useState<number[]>([])
@@ -105,10 +70,10 @@ export default function Navbar() {
                     {item.children.map((child, childIndex) => (
                       <li
                         key={childIndex}
-                        className={`py-2 cursor-pointer transition-all duration-500  ${
+                        className={`py-2 cursor-pointer transition-all   ${
                           activeIndex === index && activeChildIndex === childIndex
                             ? 'text-[var(--nav-selected-color)] font-bold ' // item con đang chọn
-                            : 'text-black hover:text-[var(--nav-selected-color)] hover:font-bold' // item con chưa chọn khi hover thay đổi màu và cỡ chữ
+                            : 'text-black hover:text-[var(--nav-selected-color)] hover:font-bold ' // item con chưa chọn khi hover thay đổi màu và cỡ chữ
                         }`}
                         onClick={() => setActiveChildIndex(childIndex)}
                       >
