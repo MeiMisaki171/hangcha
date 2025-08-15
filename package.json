@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MeiMisaki171.github.io/hangcha",
+  "homepage": "https://meimisaki171.github.io/hangcha",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
